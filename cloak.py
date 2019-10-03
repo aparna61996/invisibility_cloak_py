@@ -26,7 +26,7 @@ while(cap.isOpened()):
 	mask = cv.dilate(mask, np.ones((3,3),np.uint8),iterations = 1)
 	mask1 = mask.bitwise_not(mask)
 
-	result1 = cv.bitwise_and(bvackground, background, mask = mask)
+	result1 = cv.bitwise_and(background, background, mask = mask)
 	result2 = cv.bitwise_and(image, image, mask = mask1)
 	output = cv.addWeighted(result1, 1, result2, 1, 0)
 	
